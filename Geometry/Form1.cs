@@ -27,8 +27,9 @@ namespace Geometry
             Bitmap bmp = new Bitmap(picture.Width, picture.Height);
             Graphics graph = Graphics.FromImage(bmp);
             Pen pen = new Pen(Color.Blue);
-            graph.DrawLine(pen, 10, 50, 150, 200);
+            graph.DrawRectangle(pen, 100, 100, 300, 200);
             picture.Image = bmp;
+
         }
     }
 }

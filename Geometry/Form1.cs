@@ -6,10 +6,21 @@ namespace Geometry
 {
     public partial class Form1 : Form
     {
+        Line line1;
+        Line line2;
+
+
         public Form1()
         {
             InitializeComponent();
+            Init();
             Draw();
+        }
+
+        private void Init()
+        {
+            line1 = new Line(100, 100, 200, 10);
+            line1 = new Line(200, 10, 300, 100);
         }
 
         private void Form1_Load(object sender, EventArgs e)

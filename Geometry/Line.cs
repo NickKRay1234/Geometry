@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Geometry
+﻿namespace Geometry
 {
     class Line
     {
-        int x1, y1;
-        int x2, y2;
+        public int x1, y1;
+        public int x2, y2;
 
         public Line(int x1, int y1, int x2, int y2)
         {

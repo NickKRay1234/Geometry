@@ -6,6 +6,10 @@ namespace Geometry
 {
     public partial class Form1 : Form
     {
+        Bitmap bmp;
+        Graphics graph;
+        Pen pen;
+
         Line line1;
         Line line2;
 
@@ -19,8 +23,11 @@ namespace Geometry
 
         private void Init()
         {
+            bmp = new Bitmap(picture.Width, picture.Height);
+            graph = Graphics.FromImage(bmp);
+            pen = new Pen(Color.Blue);
             line1 = new Line(100, 100, 200, 10);
-            line1 = new Line(200, 10, 300, 100);
+            line2 = new Line(200, 10, 300, 100);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -29,14 +36,15 @@ namespace Geometry
 
         private void Draw()
         {
-            Bitmap bmp = new Bitmap(picture.Width, picture.Height);
-            Graphics graph = Graphics.FromImage(bmp);
-            Pen pen = new Pen(Color.Blue);
             graph.DrawRectangle(pen, 100, 100, 200, 200);
-            graph.DrawLine(pen, 100, 100, 200, 10);
-            graph.DrawLine(pen, 200, 10, 300, 100);
+            Draw(line1);
+            Draw(line2);
             picture.Image = bmp;
+        }
 
+        private void Draw(Line line)
+        {
+            graph.DrawLine(pen, line.x1, line.y1, line.x2, line.y2);
         }
     }
 }

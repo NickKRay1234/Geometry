@@ -4,6 +4,18 @@ using System.Windows.Forms;
 
 namespace Geometry
 {
+    public struct Pixel
+    {
+        public int x;
+        public int y;
+
+        public Pixel(int x, int y)
+        {
+            this.x = x;
+            this.y = y;
+        }
+
+    }
     public partial class Form1 : Form
     {
         Bitmap bmp;
@@ -14,7 +26,7 @@ namespace Geometry
         Line line2;
         Rectangle rectangle1;
         Circle circle1;
-
+        Pixel A, B, C, D, E, O;
 
         public Form1()
         {
@@ -28,10 +40,17 @@ namespace Geometry
             bmp = new Bitmap(picture.Width, picture.Height);
             graph = Graphics.FromImage(bmp);
             pen = new Pen(Color.Blue);
-            line1 = new Line(100, 100, 200, 10);
-            line2 = new Line(200, 10, 300, 100);
-            rectangle1 = new Rectangle(100, 100, 300, 300);
-            circle1 = new Circle(200, 200, 100);
+            A = new Pixel(100, 300);
+            B = new Pixel(300, 300);
+            C = new Pixel(100, 100);
+            D = new Pixel(300, 100);
+            E = new Pixel(200, 10);
+            O = new Pixel(200, 200);
+
+            line1 = new Line(C, E);
+            line2 = new Line(E, D);
+            rectangle1 = new Rectangle(C, B);
+            circle1 = new Circle(O, 100);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -43,7 +62,7 @@ namespace Geometry
             Draw(line1);
             Draw(line2);
             Draw(rectangle1);
-            Draw(circle1);
+            Draw(circle1); 
             picture.Image = bmp;
         }
 

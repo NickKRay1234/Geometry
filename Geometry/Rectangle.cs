@@ -23,5 +23,15 @@ namespace Geometry
             this.height = this.y2 - this.y1;
         }
 
+        public Rectangle(Pixel lu, Pixel rd)
+        {
+            this.x1 = lu.x;
+            this.y1 = lu.y;
+            this.x2 = rd.x;
+            this.y2 = rd.y;
+            this.width = this.x2 - this.x1;
+            this.height = this.y2 - this.y1;
+        }
+
     }
 }

@@ -12,5 +12,13 @@
             this.x2 = x2;  
             this.y2 = y2;
         }
+
+        public Line(Pixel begin, Pixel ended)
+        {
+            x1 = begin.x;
+            y1 = begin.y;
+            x2 = ended.x;
+            y2 = ended.y;
+        }
     }
 }
